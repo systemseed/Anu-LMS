@@ -29,7 +29,7 @@ install_platform_cli: &install_platform_cli
 
     # Add platform.sh remote to git.
     if ! git config remote.platform.url > /dev/null; then
-      git remote add platform $PLATFORM_PROJECT_NAME@git.us.platform.sh:$PLATFORM_PROJECT_NAME.git
+      git remote add platform $PLATFORM_PROJECT_NAME@git.eu-2.platform.sh:$PLATFORM_PROJECT_NAME.git
     fi
 
     # Avoid dynamic hosts issue for git push to platform.
