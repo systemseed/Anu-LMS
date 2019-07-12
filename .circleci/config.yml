@@ -49,13 +49,13 @@ jobs:
       - run:
           <<: *install_platform_cli
 
-      - run:
-          name: Create backup of production database and force push it to S3.
-          command: |
-            if [ $CIRCLE_BRANCH == "master" ]; then
-              platform ssh -A backend -e $CIRCLE_BRANCH "drush sql-dump -r web --gzip --result-file -v"
-              platform ssh -A backend -e $CIRCLE_BRANCH "php scripts/upload_backups.php" || true
-            fi
+#      - run:
+#          name: Create backup of production database and force push it to S3.
+#          command: |
+#            if [ $CIRCLE_BRANCH == "master" ]; then
+#              platform ssh -A backend -e $CIRCLE_BRANCH "drush sql-dump -r web --gzip --result-file -v"
+#              platform ssh -A backend -e $CIRCLE_BRANCH "php scripts/upload_backups.php" || true
+#            fi
 
       - run:
           name: Make a snapshot on the production before deploy.
@@ -70,16 +70,16 @@ jobs:
           no_output_timeout: 20m
 
       - run:
-          name: Build a new environment on platform.sh using db/files from the MASTER environment
-          command: platform environment:activate -y --project $PLATFORM_PROJECT_NAME --parent=master $CIRCLE_BRANCH
+          name: Build a new environment on platform.sh using db/files from the STAGE environment
+          command: platform environment:activate -y --project $PLATFORM_PROJECT_NAME --parent=stage $CIRCLE_BRANCH
 
-      - run:
-          name: Restrict access to the test environments via http
-          command: |
-            if [ $CIRCLE_BRANCH != "master" ]; then
-              platform vset env:HTTP_AUTH_USER $HTTP_USERNAME
-              platform vset env:HTTP_AUTH_PASS $HTTP_PASSWORD
-            fi
+#      - run:
+#          name: Restrict access to the test environments via http
+#          command: |
+#            if [ $CIRCLE_BRANCH != "master" ]; then
+#              platform vset env:HTTP_AUTH_USER $HTTP_USERNAME
+#              platform vset env:HTTP_AUTH_PASS $HTTP_PASSWORD
+#            fi
 
       - run:
           name: Clone database & files for stage branch or if [db sync] is presented in the commit message.
@@ -89,6 +89,21 @@ jobs:
             if [ $? -ne 1 ] || [ $CIRCLE_BRANCH == "stage" ]; then
               platform sync data -y
             fi
+
+  ###########################################
+  ############## INSTALL THE SITE ###########
+  ###########################################
+  install_site:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - run:
+          <<: *install_platform_cli
+
+      - run:
+          name: Install site from configuration
+          command: platform ssh -A backend "cd web && drush site-install minimal --existing-config --account-pass=admin --yes"
 
   ###########################################
   ############## PREPARE THE SITE ###########
@@ -308,11 +323,24 @@ workflows:
       # operations on the platform.sh.
       - prepare_platformsh
 
+      # Install site from config files.
+      - install_site:
+          requires:
+            - prepare_platformsh
+          filters:
+            branches:
+              ignore:
+                - master
+
       # Executes all operations to prepare the web site (flush caches, run updates,
       # etc).
       - prepare_site:
           requires:
             - prepare_platformsh
+          filters:
+            branches:
+              only:
+                - master
 
       # Executes tests on recently created environment at Platform.sh.
       - run_tests:
@@ -337,20 +365,20 @@ workflows:
       # Stage branch is treated as pre-production here.
       # If tests pass on stage environment, it automatically
       # send changes to stage envs for client repos.
-      - push_release_to_clients:
-          requires:
-            - run_tests
-          filters:
-            branches:
-              only:
-                - stage
-
-      # Run penetration tests against recent changes.
-      - run_penetration_tests:
-          filters:
-            branches:
-              only:
-                - stage
+#      - push_release_to_clients:
+#          requires:
+#            - run_tests
+#          filters:
+#            branches:
+#              only:
+#                - stage
+#
+#      # Run penetration tests against recent changes.
+#      - run_penetration_tests:
+#          filters:
+#            branches:
+#              only:
+#                - stage
 
   # Run security checks for the ANU LMS every Thursday
   # at 12am.
