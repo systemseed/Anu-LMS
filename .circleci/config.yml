@@ -81,14 +81,14 @@ jobs:
 #              platform vset env:HTTP_AUTH_PASS $HTTP_PASSWORD
 #            fi
 
-      - run:
-          name: Clone database & files for stage branch or if [db sync] is presented in the commit message.
-          shell: /bin/bash
-          command: |
-            git log --format=%B -n 1 $CIRCLE_SHA1 | grep "\[db sync\]"
-            if [ $? -ne 1 ] || [ $CIRCLE_BRANCH == "stage" ]; then
-              platform sync data -y
-            fi
+#      - run:
+#          name: Clone database & files for stage branch or if [db sync] is presented in the commit message.
+#          shell: /bin/bash
+#          command: |
+#            git log --format=%B -n 1 $CIRCLE_SHA1 | grep "\[db sync\]"
+#            if [ $? -ne 1 ] || [ $CIRCLE_BRANCH == "stage" ]; then
+#              platform sync data -y
+#            fi
 
   ###########################################
   ############## INSTALL THE SITE ###########
@@ -103,7 +103,7 @@ jobs:
 
       - run:
           name: Install site from configuration
-          command: platform ssh -A backend "cd web && drush site-install minimal --existing-config --account-pass=admin --yes"
+          command: platform ssh -A backend "cd web && drush site-install minimal --existing-config --yes"
 
   ###########################################
   ############## PREPARE THE SITE ###########
@@ -334,18 +334,18 @@ workflows:
 
       # Executes all operations to prepare the web site (flush caches, run updates,
       # etc).
-      - prepare_site:
-          requires:
-            - prepare_platformsh
-          filters:
-            branches:
-              only:
-                - master
+#      - prepare_site:
+#          requires:
+#            - prepare_platformsh
+#          filters:
+#            branches:
+#              only:
+#                - master
 
       # Executes tests on recently created environment at Platform.sh.
       - run_tests:
           requires:
-            - prepare_site
+            - install_site
           filters:
             branches:
               ignore:

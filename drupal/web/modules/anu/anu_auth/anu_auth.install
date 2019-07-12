@@ -13,12 +13,26 @@ use Drupal\consumers\Entity\Consumer;
 function anu_auth_install() {
   // Create a Consumer.
   $client = Consumer::create([
-    'uuid' => 'your_client_id',
+    'uuid' => !empty($_ENV['CLIENT_ID']) ? $_ENV['CLIENT_ID'] : "48898cf3-e2d9-4c89-a432-f21059c8cfb1",
     'owner_id' => 1,
     'user_id' => 1,
-    'label' => 'Anu-LMS',
-    'secret' => 'your_client_secret',
-    'confidential' => TRUE,
+    'label' => 'consumer',
+    'secret' => !empty($_ENV['CLIENT_SECRET']) ? $_ENV['CLIENT_SECRET'] : "your_consumer_client_secret",
+    'confidential' => FALSE,
+    'image_styles' => [
+      [
+        'target_id' => '389x292',
+      ],
+      [
+        'target_id' => '576x450',
+      ],
+      [
+        'target_id' => 'w1400',
+      ],
+      [
+        'target_id' => 'w730',
+      ],
+    ]
   ]);
   $client->save();
 }
