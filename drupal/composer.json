@@ -30,7 +30,7 @@
     "drupal/console": "~1.0",
     "drupal/consumer_image_styles": "^2.0@RC",
     "drupal/consumers": "^1.0@beta",
-    "drupal/core": "~8.5.0",
+    "drupal/core": "~8.6.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/double_field": "^3.1",
     "drupal/dropzonejs": "^2.0@alpha",
@@ -67,20 +67,21 @@
     "drupal/search_api": "^1.8",
     "drupal/search_api_attachments": "^1.0@beta",
     "drupal/search_api_solr": "^2.0",
-    "drupal/simple_oauth": "3.x-dev#b07da37",
+    "drupal/simple_oauth": "^3.0",
     "drupal/smtp": "^1.0@beta",
     "drupal/toolbar_themes": "^1.0@alpha",
     "drupal/views_bulk_operations": "^2.4",
     "drupal/weight": "^3.1",
-    "drush/drush": "~8.0",
+    "drush/drush": "^9.0.0",
     "webflo/drupal-finder": "^0|^1.0.0",
     "webmozart/path-util": "^2.3",
     "wisembly/elephant.io": "^3.3"
   },
   "require-dev": {
     "drupal/coder": "8.2.12",
-    "drupal/devel": "^1.2",
-    "drupal/devel_codemirror": "^1.0",
+    "drupal/devel": "^2.1",
+    "drupal/devel_codemirror": "^2.0",
+    "drupal/devel_php": "^1.0",
     "drupal/reroute_email": "^1.0@beta",
     "drupal/stage_file_proxy": "^1.0@alpha"
   },
@@ -140,8 +141,7 @@
         "Refine cases when access token is revoked": "https://www.drupal.org/files/issues/simple_oauth-auth-revoke-2946882-11.patch"
       },
       "drupal/core": {
-        "Entity reference views": "https://www.drupal.org/files/issues/2018-03-09/drupal-use_view_output_for_entityreference_options-2174633-206.patch",
-        "Avoid bubbleable metadata issue with file_create_url()": "patches/core_2867355-collect_bubbleable_metadata_in_stream_wrappers-21.patch"
+        "Entity reference views": "https://www.drupal.org/files/issues/2018-03-09/drupal-use_view_output_for_entityreference_options-2174633-206.patch"
       },
       "drupal/message": {
         "Added a return for the Message save function": "https://patch-diff.githubusercontent.com/raw/Gizra/message/pull/220.patch"
