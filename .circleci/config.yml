@@ -103,7 +103,7 @@ jobs:
 
       - run:
           name: Install site from configuration
-          command: platform ssh -A backend "cd web && drush site-install minimal --existing-config --notify --account-pass=admin --yes"
+          command: platform ssh -A backend "cd web && drush site-install minimal --existing-config --account-pass=admin --yes"
 
   ###########################################
   ############## PREPARE THE SITE ###########
@@ -327,10 +327,10 @@ workflows:
       - install_site:
           requires:
             - prepare_platformsh
-          filters:
-            branches:
-              ignore:
-                - master
+#          filters:
+#            branches:
+#              ignore:
+#                - master
 
       # Executes all operations to prepare the web site (flush caches, run updates,
       # etc).
@@ -354,13 +354,13 @@ workflows:
       # Stage branch is treated as pre-production here.
       # If tests pass on stage environment, it automatically
       # send changes to the production environment.
-      - push_release_to_production:
-          requires:
-            - run_tests
-          filters:
-            branches:
-              only:
-                - stage
+#      - push_release_to_production:
+#          requires:
+#            - run_tests
+#          filters:
+#            branches:
+#              only:
+#                - stage
 
       # Stage branch is treated as pre-production here.
       # If tests pass on stage environment, it automatically
