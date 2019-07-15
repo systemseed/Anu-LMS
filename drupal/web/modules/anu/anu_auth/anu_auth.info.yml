@@ -5,3 +5,5 @@ core: 8.x
 package: Anu
 dependencies:
   - simple_oauth:simple_oauth
+  - consumers:consumers
+  - consumer_image_styles:consumer_image_styles
