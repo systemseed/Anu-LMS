@@ -68,7 +68,7 @@ class SearchCest {
     $I->click('//div[@id="search-tabs"]//span[text()="Resources"]');
     $I->waitForElement('#search-results-list .search-item.media_resource');
     $I->click('#search-results-list .search-item.media_resource');
-    $I->waitForText('Lesson 2', null, 'h1');
+    $I->waitForText('Resource', null, 'h5');
     $I->waitForElement('.resource.highlighted');
 
     // Search for own comment.
