@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2867f748c9a1fdf04c6dc784a69a1f24",
+    "content-hash": "71adff66499c02f9ce1337efae06e783",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4346,25 +4346,25 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.26.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi.git",
-                "reference": "8.x-1.26"
+                "reference": "8.x-1.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.26.zip",
-                "reference": "8.x-1.26",
-                "shasum": "1b1e9c62d87662b65c64e101e540b57f458176a4"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "fbe3f36bfbbb804c2d7b0314136d30338002b1a0"
             },
             "require": {
-                "drupal/core": "^8.5.11"
+                "drupal/core": "^8.4.3"
             },
             "require-dev": {
                 "drupal/schemata": "1.x-dev#8325d172e1d6880aa24073f8f751ef089282cf9a",
                 "drupal/schemata_json_schema": "*",
-                "justinrainbow/json-schema": "^5.2"
+                "justinrainbow/json-schema": "^4.1"
             },
             "type": "drupal-module",
             "extra": {
@@ -4372,8 +4372,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.26",
-                    "datestamp": "1550761694",
+                    "version": "8.x-1.17",
+                    "datestamp": "1545243863",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4413,21 +4413,21 @@
         },
         {
             "name": "drupal/jsonapi_extras",
-            "version": "2.15.0",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/jsonapi_extras.git",
-                "reference": "8.x-2.15"
+                "reference": "8.x-2.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.15.zip",
-                "reference": "8.x-2.15",
-                "shasum": "b003318eb70af5b7a4e3fa0065e2c06088d60733"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi_extras-8.x-2.0-rc1.zip",
+                "reference": "8.x-2.0-rc1",
+                "shasum": "a876638e2d1810139946f33a5a65944472bdfaf1"
             },
             "require": {
                 "drupal/core": "^8.5",
-                "drupal/jsonapi": "^1.22",
+                "drupal/jsonapi": "^1.13",
                 "e0ipso/shaper": "^1"
             },
             "type": "drupal-module",
@@ -4436,11 +4436,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.15",
-                    "datestamp": "1545810180",
+                    "version": "8.x-2.0-rc1",
+                    "datestamp": "1524209880",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
