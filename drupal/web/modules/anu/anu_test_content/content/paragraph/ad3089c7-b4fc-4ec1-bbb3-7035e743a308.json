@@ -8,25 +8,25 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/image_full_text\/uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json",
+                "href": "http:\/\/default\/user\/999?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/image_full_text\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                "href": "http:\/\/default\/user\/999?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/image_full_text\/field_paragraph_image": [
             {
-                "href": "http:\/\/default\/file\/999319?_format=hal_json",
+                "href": "http:\/\/default\/file\/319?_format=hal_json",
                 "lang": "en"
             }
         ]
     },
     "id": [
         {
-            "value": 9991187
+            "value": 1187
         }
     ],
     "uuid": [
@@ -36,7 +36,7 @@
     ],
     "revision_id": [
         {
-            "value": 9995280
+            "value": 5280
         }
     ],
     "type": [
@@ -55,7 +55,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -73,7 +73,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -90,7 +90,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/file\/999319?_format=hal_json"
+                        "href": "http:\/\/default\/file\/319?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
@@ -124,7 +124,7 @@
     ],
     "parent_id": [
         {
-            "value": "999190"
+            "value": "190"
         }
     ],
     "parent_type": [

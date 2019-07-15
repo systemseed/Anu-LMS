@@ -1,26 +1,26 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/group\/99926?_format=hal_json"
+            "href": "http:\/\/default\/group\/26?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/group\/class"
         },
         "http:\/\/drupal.org\/rest\/relation\/group\/class\/uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json",
+                "href": "http:\/\/default\/user\/999?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/class\/field_organization": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/9997?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 99926
+            "value": 26
         }
     ],
     "uuid": [
@@ -50,7 +50,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -68,7 +68,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/9997?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisations"

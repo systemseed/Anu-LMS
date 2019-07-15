@@ -8,13 +8,13 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/quiz_checkboxes\/uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json",
+                "href": "http:\/\/default\/user\/999?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/quiz_checkboxes\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                "href": "http:\/\/default\/user\/999?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/quiz_checkboxes\/field_quiz_blocks": [
@@ -25,7 +25,7 @@
     },
     "id": [
         {
-            "value": 9991211
+            "value": 1211
         }
     ],
     "uuid": [
@@ -35,7 +35,7 @@
     ],
     "revision_id": [
         {
-            "value": 9995372
+            "value": 5372
         }
     ],
     "type": [
@@ -54,7 +54,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -72,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -119,7 +119,7 @@
     ],
     "parent_id": [
         {
-            "value": "999192"
+            "value": "192"
         }
     ],
     "parent_type": [

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/group\/99927?_format=hal_json"
+            "href": "http:\/\/default\/group\/27?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/group\/class"
@@ -14,13 +14,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/group\/class\/field_organization": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/9998?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 99927
+            "value": 27
         }
     ],
     "uuid": [
@@ -68,7 +68,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/9998?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/organisations"

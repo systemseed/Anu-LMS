@@ -8,24 +8,24 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/media_audio\/uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json",
+                "href": "http:\/\/default\/user\/999?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/media_audio\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                "href": "http:\/\/default\/user\/999?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/media_audio\/field_paragraph_file": [
             {
-                "href": "http:\/\/default\/file\/999320?_format=hal_json"
+                "href": "http:\/\/default\/file\/320?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 9991194
+            "value": 1194
         }
     ],
     "uuid": [
@@ -35,7 +35,7 @@
     ],
     "revision_id": [
         {
-            "value": 9995287
+            "value": 5287
         }
     ],
     "type": [
@@ -54,7 +54,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -72,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/999999?_format=hal_json"
+                        "href": "http:\/\/default\/user\/999?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -89,7 +89,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/file\/999320?_format=hal_json"
+                        "href": "http:\/\/default\/file\/320?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/audio"
@@ -122,7 +122,7 @@
     ],
     "parent_id": [
         {
-            "value": "999190"
+            "value": "190"
         }
     ],
     "parent_type": [
