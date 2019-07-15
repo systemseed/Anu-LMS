@@ -14,6 +14,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\user\UserInterface;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityTypeInterface;
 
 /**
  * Implements hook_token_info().
@@ -31,6 +32,23 @@ function anu_user_token_info() {
   ];
 
   return $info;
+}
+
+/**
+ * Implements hook_jsonapi_entity_filter_access() for all eck entities.
+ *
+ * Can be removed as soon as https://www.drupal.org/project/eck/issues/3025975 fixed.
+ */
+function anu_user_jsonapi_entity_filter_access(EntityTypeInterface $entity_type, AccountInterface $account) {
+  $result = [];
+  if ($entity_type->getProvider() == 'eck') {
+    $result = [
+      JSONAPI_FILTER_AMONG_ALL => AccessResult::allowedIfHasPermission($account, "view any {$entity_type->id()} entities"),
+      JSONAPI_FILTER_AMONG_OWN => AccessResult::allowedIfHasPermission($account, "view own {$entity_type->id()} entities"),
+    ];
+  }
+
+  return $result;
 }
 
 /**
