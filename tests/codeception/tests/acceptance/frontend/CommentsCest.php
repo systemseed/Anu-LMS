@@ -195,25 +195,25 @@ class CommentsCest {
     $I->openVideoComments();
 
     // Get current count of comments of the first video paragraph.
-    $count = $I->getCommentsCount('9991191');
+    $count = $I->getCommentsCount('1191');
 
     // Add a comment.
     $comment = $I->createComments(1)[0];
     // Make sure amount of comments updated.
-    $I->assertEquals($I->getCommentsCount('9991191'), $count + 1);
+    $I->assertEquals($I->getCommentsCount('1191'), $count + 1);
 
     // Delete comment.
     $I->deleteComment($comment);
     // Close "Comment deleted" info dialog.
     $I->click('.s-alert-close');
     // Make sure amount of comments updated.
-    $I->assertEquals($I->getCommentsCount('9991191'), $count);
+    $I->assertEquals($I->getCommentsCount('1191'), $count);
 
     // Switch to Test Organization 2.
     $I->switchToOrganization('Test Organization 2');
 
     // Make sure that amomunt of comments is different for org 2.
-    $org2_count = $I->getCommentsCount('9991191');
+    $org2_count = $I->getCommentsCount('1191');
     $I->assertNotEquals($count, $org2_count);
   }
 
@@ -226,7 +226,7 @@ class CommentsCest {
     $I->openVideoComments();
 
     // Get current count of comments of the first video paragraph.
-    $count = $I->getCommentsCount('9991191');
+    $count = $I->getCommentsCount('1191');
 
     // Teacher creates a comment.
     $teacher = $I->haveFriend('teacher', 'Step\Acceptance\Teacher');
@@ -240,7 +240,7 @@ class CommentsCest {
     // Learner should see the new comment right away.
     $I->waitForElement('#' . $this->comments[0]);
     // Comments counter should update automatically.
-    $I->assertEquals($I->getCommentsCount('9991191'), $count + 1);
+    $I->assertEquals($I->getCommentsCount('1191'), $count + 1);
 
     // Teacher deletes comment.
     $teacher->does(function(\Step\Acceptance\Teacher $I) {
@@ -250,7 +250,7 @@ class CommentsCest {
     // Comment should be removed from learner's screen right away.
     $I->waitForElementNotVisible('#' . $this->comments[0]);
     // Comments counter should update automatically.
-    $I->assertEquals($I->getCommentsCount('9991191'), $count);
+    $I->assertEquals($I->getCommentsCount('1191'), $count);
   }
 
   /**
